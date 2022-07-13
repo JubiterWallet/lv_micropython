@@ -85,6 +85,7 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/mpthreadport.c
     ${PROJECT_DIR}/machine_rtc.c
     ${PROJECT_DIR}/machine_sdcard.c
+    ${PROJECT_DIR}/lcd_spi_config.c
 )
 
 # Include LVGL bindings rules
@@ -133,6 +134,7 @@ set(IDF_COMPONENTS
     esp_http_client
     esp-tls
     nghttp
+    esp_lcd
 )
 
 if(IDF_VERSION_MINOR GREATER_EQUAL 1 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)

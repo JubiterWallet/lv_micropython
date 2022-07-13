@@ -95,6 +95,8 @@ void mp_task(void *pvParameter) {
     #endif
     #if MICROPY_HW_ENABLE_UART_REPL
     uart_stdout_init();
+    extern void spi_lcd_control_init(void);
+    spi_lcd_control_init();
     #endif
     machine_init();
 

@@ -3,7 +3,7 @@
 # This is a simple, convenience wrapper around idf.py (which uses cmake).
 
 # Select the board to build for, defaulting to GENERIC.
-BOARD ?= GENERIC
+BOARD ?= GENERIC_S3_SPIRAM
 
 # If the build directory is not given, make it reflect the board name.
 BUILD ?= build-$(BOARD)
@@ -30,7 +30,8 @@ ifdef FROZEN_MANIFEST
        IDFPY_FLAGS += -D MICROPY_FROZEN_MANIFEST=$(FROZEN_MANIFEST)
 endif
 
-all:
+all:	
+#	idf.py $(IDFPY_FLAGS) menuconfig
 	idf.py $(IDFPY_FLAGS) build
 	@$(PYTHON) makeimg.py \
 		$(BUILD)/sdkconfig \
@@ -46,7 +47,7 @@ clean:
 	idf.py $(IDFPY_FLAGS) fullclean
 
 deploy:
-	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) flash
+	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) flash 
 
 erase:
 	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) erase_flash
