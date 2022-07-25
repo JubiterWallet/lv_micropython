@@ -77,7 +77,8 @@
 #else
 #define MP_TASK_STACK_LIMIT_MARGIN (1024)
 #endif
-
+extern void spi_lcd_control_init(void);
+extern void power_gpio_init(void);
 int vprintf_null(const char *format, va_list ap) {
     // do nothing: this is used as a log target during raw repl mode
     return 0;
@@ -95,8 +96,6 @@ void mp_task(void *pvParameter) {
     #endif
     #if MICROPY_HW_ENABLE_UART_REPL
     uart_stdout_init();
-    extern void spi_lcd_control_init(void);
-    spi_lcd_control_init();
     #endif
     machine_init();
 
@@ -158,6 +157,8 @@ soft_reset:
 
     // initialise peripherals
     machine_pins_init();
+    spi_lcd_control_init();
+    power_gpio_init();
     #if MICROPY_PY_MACHINE_I2S
     machine_i2s_init0();
     #endif
