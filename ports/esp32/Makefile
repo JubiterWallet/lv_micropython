@@ -1,7 +1,7 @@
 # Makefile for MicroPython on ESP32.
 #
 # This is a simple, convenience wrapper around idf.py (which uses cmake).
-
+USER_C_MODULES=${PWD}/embed/embed.cmake
 # Select the board to build for, defaulting to GENERIC.
 BOARD ?= GENERIC_S3_SPIRAM
 
