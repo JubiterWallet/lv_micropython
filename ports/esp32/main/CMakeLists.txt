@@ -86,6 +86,8 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/machine_rtc.c
     ${PROJECT_DIR}/machine_sdcard.c
     ${PROJECT_DIR}/lcd_spi_config.c
+    ${PROJECT_DIR}/power_gpio.c
+    ${PROJECT_DIR}/lcd_spi_config.c
 )
 
 # Include LVGL bindings rules
