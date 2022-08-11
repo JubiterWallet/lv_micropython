@@ -1,0 +1,1 @@
+freeze(".","main.py")
