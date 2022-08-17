@@ -170,7 +170,8 @@ struct mp_bluetooth_nimble_root_pointers_t;
     struct _machine_timer_obj_t *machine_timer_obj_head; \
     struct _machine_i2s_obj_t *machine_i2s_obj[I2S_NUM_MAX]; \
     mp_obj_t native_code_pointers; \
-    MICROPY_PORT_ROOT_POINTER_BLUETOOTH_NIMBLE
+    MICROPY_PORT_ROOT_POINTER_BLUETOOTH_NIMBLE	\
+    mp_obj_t trezorconfig_ui_wait_callback;
 
 // type definitions for the specific machine
 

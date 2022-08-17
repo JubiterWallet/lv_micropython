@@ -2,6 +2,20 @@
 
 cmake_minimum_required(VERSION 3.12)
 
+add_compile_definitions(BITCOIN_ONLY=0)
+add_definitions(-DAES_128)
+add_definitions(-DAES_192)
+add_definitions(-DRAND_PLATFORM_INDEPENDENT)
+add_definitions(-DRANDI)
+add_compile_definitions(USE_BIP32_CACHE=0)
+add_compile_definitions(USE_KECCAK=1)
+add_compile_definitions(USE_ETHEREUM=1)
+add_compile_definitions(USE_MONERO=1)
+add_compile_definitions(USE_CARDANO=1)
+add_compile_definitions(USE_NEM=1)
+add_compile_definitions(USE_EOS=1)
+add_compile_definitions(TREZOR_MODEL_T)
+
 # Set the location of this port's directory.
 set(MICROPY_PORT_DIR ${CMAKE_SOURCE_DIR})
 
